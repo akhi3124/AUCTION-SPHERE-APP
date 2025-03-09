@@ -1,0 +1,155 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #8591b5; /* Light background color */
+  transition: background-color 0.5s ease;
+}
+
+.app-header {
+  background-color: #0c1b32; /* Primary color for header */
+  color: #d3d5e3;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Add position relative for positioning search bar */
+  z-index: 10; /* Ensure header is above the sliding content */
+}
+
+.auth-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-buttons .btn {
+  color: #fff;
+  margin: 0 0.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-buttons .btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /* Add some space between title and search bar */
+}
+
+.search-bar {
+  width: 300px; /* Adjust width as needed */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #8eb1d4;
+  border-radius: 4px;
+}
+
+.auth-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Main content area */
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  position: relative; /* Add position relative for positioning sliding content */
+  overflow-x: hidden; /* Hide horizontal overflow for smooth sliding */
+}
+
+/* Item list styles */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.item-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(23, 23, 23, 0.15);
+}
+
+.item-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item-card .card-body {
+  padding: 1rem;
+}
+
+.item-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Form styles */
+.form-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-container .form-label {
+  font-weight: 600;
+}
+
+.form-container .form-control {
+  border-radius: 4px;
+  border-color: #d9d9d9;
+}
+
+.form-container .btn-primary {
+  background-color: #3a5269;
+  border-color: #59748d;
+}
+
+/* Slide movement for entering and exiting pages */
+.slide-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms, transform 300ms;
+}
